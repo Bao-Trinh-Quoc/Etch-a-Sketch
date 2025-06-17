@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const grid = document.querySelector('#grid');
-    const setGridBtn = document.querySelector('setGridSize');
+    const setGridBtn = document.querySelector('#setGridSize');
 
     const size = 16;
     let currentSize = size;
@@ -19,6 +19,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    setGridBtn.addEventListener('click', function() {
+        let size = prompt('Enter grid size (max 100):');
+        size = parseInt(size);
+        if (isNaN(size) || size < 1 || size > 100) {
+            alert('Please enter a number between 1 and 100.');
+            return;
+        }
+        currentSize = size;
+        document.documentElement.style.setProperty('--grid-size', currentSize);
+        createGrid(currentSize);
+    });
+
+
     
     document.documentElement.style.setProperty('--grid-size', currentSize);
     createGrid(currentSize);
