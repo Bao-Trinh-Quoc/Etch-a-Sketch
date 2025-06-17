@@ -7,6 +7,29 @@
     max-height: 9600px;
     border: 2px solid #333;
 }
+.button-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+
+}
+#setGridSize {
+    background-color: #04AA6D; /* Green */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+#resetGrid {
+    background-color: #04AA6D; /* Green */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
 /* calc(100% /16) makes each square 1/16th of the container width */
 .square {
     flex: 0 0 calc(100% / 16);
@@ -17,3 +40,4 @@
 .hover {
     background-color:coral;
 }
+
