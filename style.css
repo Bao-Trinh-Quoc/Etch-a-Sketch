@@ -32,7 +32,7 @@
 
 /* calc(100% /16) makes each square 1/16th of the container width */
 .square {
-    flex: 0 0 calc(100% / 16);
+    flex: 0 0 calc(100% / var(--grid-size, 16));
     box-sizing: border-box;
     border: 1px solid #ccc;
 }
