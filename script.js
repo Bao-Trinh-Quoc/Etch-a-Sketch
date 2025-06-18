@@ -16,9 +16,19 @@ document.addEventListener('DOMContentLoaded', function() {
             for (let j = 0; j < size; j++) {
                 const square = document.createElement('div');
                 square.classList.add('square');
+                square.dataset.darkness = 0;
                 square.addEventListener('mouseenter', function() {
-                    // square.classList.add('hover');
-                    square.style.backgroundColor = getRandomColor();            
+                    let darkness = parseInt(square.dataset.darkness, 10);
+                    if (darkness == 0) {
+                        const randomColor = getRandomColor();
+                        square.style.backgroundColor = randomColor;
+                        square.dataset.baseColor = randomColor;
+                    }
+                    if (darkness < 10) {
+                        darkness += 1;
+                        square.dataset.darkness = darkness;
+                        square.style.backgroundImage = `linear-gradient(rgba(0,0,0,${darkness * 0.1}), rgba(0,0,0,${darkness * 0.1}))`;
+                    }
                 });
                 grid.appendChild(square);   
             }
