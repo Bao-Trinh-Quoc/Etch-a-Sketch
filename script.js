@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const grid = document.querySelector('#grid');
     const setGridBtn = document.querySelector('#setGridSize');
-
+    const resetBtn = document.querySelector('#resetGrid');
     const size = 16;
     let currentSize = size;
 
@@ -31,7 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
         createGrid(currentSize);
     });
 
-
+    resetBtn.addEventListener('click', function() {
+        createGrid(currentSize);
+    });
     
     document.documentElement.style.setProperty('--grid-size', currentSize);
     createGrid(currentSize);
